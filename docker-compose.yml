@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: dev
+      DATABASE_NAME: my_db
+      DATABASE_PORT: 1000
+      API_KEY: '4321'
+      PORT: 300
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: LucasLucas
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: database
+  database:
+    image: postgres
+    environment:
+      - DATABASE_NAME=my_db
+      - DATABASE_PORT=1000
+      - API_KEY='4321'
+      - PORT=300
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=LucasLucas
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=postgreaws.cgva1slg3i1p.us-east-1.rds.amazonaws.com

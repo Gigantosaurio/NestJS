@@ -20,7 +20,7 @@ const client = new Client({
 client.connect();
 client.query('SELECT * FROM task ORDER BY id ASC', (err, res) => {
   console.error(err);
-  console.log(res.rows);
+  console.log(res);
 });
 
 @Global()

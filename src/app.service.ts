@@ -12,14 +12,14 @@ export class AppService {
     @Inject(config.KEY) private configService: ConfigType<typeof config>,
   ) {}
   getHello(): string {
-    const apiKey = this.configService.apiKey;
-    const name = this.configService.database.name;
-    return `Hello World! ${apiKey} ${name}`;
+    //onst apiKey = this.configService.apiKey;
+    //onst name = this.configService.database.name;
+    return 'Hello World!';
   }
   getTasks(){
     // Todo se maneja como promesas, tiene que haber un retorno hacia el Controller
     return new Promise((resolve, reject) => {
-       this.clientePG.query('SELECT * FROM task ORDER BY id ASC', (err, res) => {
+       this.clientePG.query('SELECT * FROM customer ORDER BY id ASC', (err, res) => {
         if(err){
             reject(err);
         }
